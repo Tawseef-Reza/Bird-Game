@@ -8,6 +8,7 @@ public class GlockScript : MonoBehaviour
     public bool reloading = false;
 
     [SerializeField] private AudioSource reloadAudio;
+    [SerializeField] private AudioSource reloadAudioEmpty;
     [SerializeField] private AudioSource shootAudio;
 
     [SerializeField] private TextMeshProUGUI bulletCount;
@@ -47,5 +48,10 @@ public class GlockScript : MonoBehaviour
     {
         gunOperate.bulletsLeft = gunOperate.maxBulletsLeft;
         bulletCount.text = $"{gunOperate.bulletsLeft} / ∞";
+    }
+
+    private void PlayReloadEmptyAudio()
+    {
+        reloadAudioEmpty.Play();
     }
 }
