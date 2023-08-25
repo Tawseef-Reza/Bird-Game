@@ -23,7 +23,6 @@ public class GunOperate : MonoBehaviour
 
     [SerializeField] private MultiAimConstraint gunAim;
     [SerializeField] private MultiPositionConstraint gunPos;
-    private float xPosInter = 0;
     [SerializeField] private float snappiness = 50f;
     private bool isFree = true;
     private bool holstered = false;
@@ -107,32 +106,7 @@ public class GunOperate : MonoBehaviour
                 currentGunAnim = "GunIdle";
                 gunAnimator.CrossFade(currentGunAnim, 0f);
             }
-            
-            //string anim = "";
-            //switch (Input.GetAxisRaw("Horizontal"))
-            //{
-            //    case -1:
-            //        anim = "GunSwayLeft";
-            //        break;
-            //    case 0:
-            //        anim = "GunIdle";
-            //        break;
-            //    case 1:
-            //        anim = "GunSwayRight";
-            //        break;
-            //}
-            //if (currentGunAnim != anim)
-            //{
-            //    currentGunAnim = anim;
-            //    if (currentGunAnim == "GunIdle")
-            //    {
-            //        gunAnimator.CrossFade(currentGunAnim, 0.2f);
-            //    }
-            //    else
-            //    {
-            //        gunAnimator.CrossFade(currentGunAnim, 0.2f);
-            //    }
-            //}
+       
         }
         bool hit = Physics.Raycast(_camera.position, _camera.forward, out RaycastHit generalInfo);
 

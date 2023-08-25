@@ -6,7 +6,11 @@ public enum EnemyState
 {
     Rotating,
     Moving,
+    IdleLook,
     Idle,
+    Searching,
+    SearchingRotate,
+    SearchingMove,
     Chasing
 }
 public class EnemyInfo : MonoBehaviour
@@ -14,8 +18,7 @@ public class EnemyInfo : MonoBehaviour
     // Start is called before the first frame update
    
     public EnemyState _enemyState = EnemyState.Rotating;
-    public List<GameObject> targets = new List<GameObject>();
-    public GameObject target;
+    public GameObject target = null;
     void Start()
     {
         
